@@ -7,8 +7,10 @@ public class Test {
 			{"炭酸水","二酸化炭素","気体","酸性","ない","通す"},{"ほう酸水","ほう酸","固体","酸性","ない","通す"},
 			{"食塩水","食塩","固体","中性","ない","よく通す"},{"アルコール水","アルコール","液体","中性","ある","通さない"},
 			{"さとう水","さとう","固体","中性","ない","通さない"},{"水酸化ナトリウム水溶液","水酸化ナトリウム","固体","アルカリ性","ない","よく通す"},
-			{"石灰水","消石灰","固体","アルカリ性","ない","通す"},{"アンモニア水","アンモニア","気体","アルカリ性","ある","通す"}};
-	static int n1,n2,n3,n4,n5,n6,n7,n8,n9,n10;
+			{"石灰水","消石灰","固体","アルカリ性","ない","通す"},{"アンモニア水","アンモニア","気体","アルカリ性","ある","通す"}};//水溶液の情報を格納
+	static int n1,n2,n3,n4,n5,n6,n7,n8,n9,n10; //問題をランダムにするための変数
+
+	//乱数を生成するrandメソッド
 	static void rand() {
 		n1=new java.util.Random().nextInt(10);
 		n2=n1;
@@ -48,8 +50,10 @@ public class Test {
 			n10=new java.util.Random().nextInt(10);
 		}
 	}
+	//問題を生成するdocメソッド
 	static void doc(int cont,String lev) {
 		switch(lev) {
+		//mainメソッドでの変数levelによって条件分岐
 		case "1":
 			try{
 				FileWriter fout=new FileWriter("Mondai_Level1_"+cont+".doc");
@@ -66,7 +70,7 @@ public class Test {
 				fout.write(sui[n10][0]+"\t"+"\t"+"\t"+"\t"+"\t"+"\n");
 				fout.close();
 				}catch (Exception e){
-				System.out.println(e);
+				System.out.println(e); //例外処理
 				}
 			break;
 		case "2":
@@ -85,7 +89,7 @@ public class Test {
 				fout.write(sui[n10][0]+"\t"+"\t"+"\t"+"\t"+"\t"+"\n");
 				fout.close();
 				}catch (Exception e){
-				System.out.println(e);
+				System.out.println(e); //例外処理
 				}
 			break;
 		case "3-1":
@@ -104,7 +108,7 @@ public class Test {
 				fout.write("　　　　　"+"\t"+sui[n10][1]+"\t"+"\t"+"\t"+"\t"+"\n");
 				fout.close();
 				}catch (Exception e){
-				System.out.println(e);
+				System.out.println(e); //例外処理
 				}
 			break;
 		case "3-2":
@@ -123,7 +127,7 @@ public class Test {
 				fout.write(sui[n10][0]+"\t"+"\t"+"\t"+"\t"+"\t"+"\n");
 				fout.close();
 				}catch (Exception e){
-				System.out.println(e);
+				System.out.println(e); //例外処理
 				}
 			break;
 		case "4-1":
@@ -142,7 +146,7 @@ public class Test {
 				fout.write(sui[n10][0]+"\t"+"\t"+"\t"+"\t"+"\t"+"\n");
 				fout.close();
 				}catch (Exception e){
-				System.out.println(e);
+				System.out.println(e); //例外処理
 				}
 			break;
 		case "4-2":
@@ -161,16 +165,20 @@ public class Test {
 				fout.write("　　　　　"+"\t"+sui[n10][1]+"\t"+"\t"+"\t"+"\t"+"\n");
 				fout.close();
 				}catch (Exception e){
-				System.out.println(e);
+				System.out.println(e); //例外処理
 				}
 			break;
 		}
 	}
+	//答えを生成するansメソッド
 	static void ans(int cont,int num) {
 		switch(num) {
+		//mainメソッドでの変数answerによって条件分岐
 		case 0:
+			//何もしない
 			break;
 		case 1:
+			//答えを生成
 			try{
 				FileWriter fout=new FileWriter("Kotae_"+cont+".doc");
 				fout.write("\t"+"溶けている物質"+"\t"+"状態"+"\t"+"性質"+"\t"+"におい"+"\t"+"電気"+"\n");
@@ -216,7 +224,7 @@ public class Test {
 				fout.write(sui[n10][5]+"\n");
 				fout.close();
 				}catch (Exception e){
-				System.out.println(e);
+				System.out.println(e); //例外処理
 				}
 			break;
 		}

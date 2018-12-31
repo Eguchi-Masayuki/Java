@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author masay
+ *
+ */
+module Suiyoueki {
+}
